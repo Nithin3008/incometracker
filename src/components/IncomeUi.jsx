@@ -9,7 +9,7 @@ const IncomeUi = ({ data }) => {
           {data.description}
         </p>
         <p>
-          <span className="font-medium text-xl">Quantity : </span>
+          <span className="font-medium text-xl">Amount : </span>
           {data.amount}
         </p>
         <p>

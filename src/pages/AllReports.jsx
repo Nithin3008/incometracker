@@ -21,6 +21,11 @@ const AllReports = () => {
 
   const cateOutput = new Set(cate);
 
+  const totalAmount = savingsList.savingss.reduce(
+    (acc, val) => acc + val.amount,
+    0
+  );
+
   return (
     <div className="w-fit m-auto space-x-2 space-y-4 flex flex-col justify-center items-center mt-8">
       <select onChange={(e) => setFilter(e.target.value)}>
@@ -32,11 +37,14 @@ const AllReports = () => {
         <>
           {" "}
           <div>
+            <h1>Expense Report</h1>
             <TableItems data={expenseList.expenses}></TableItems>
           </div>
           <div>
+            <h1>Income Expense</h1>
             <TableItems data={incomeList.income}></TableItems>
           </div>
+          <div>Total Saving Amount :{totalAmount}</div>
         </>
       ) : filterType == "expense" ? (
         <ul>
