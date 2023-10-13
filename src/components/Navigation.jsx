@@ -26,13 +26,13 @@ const Navigation = () => {
           All Reports
         </NavLink>
         <a
-          href="https://github.com/Nithin3008/inventorymanagement"
+          href="https://github.com/Nithin3008/incometracker"
           className="text-xl text-blue-500 font-bold"
         >
           Github Link
         </a>
         <a
-          href="https://replit.com/@nithinrocky30/assign18"
+          href="https://replit.com/@nithinrocky30/assign19"
           className="text-xl text-blue-500 font-bold"
         >
           Repl Link
