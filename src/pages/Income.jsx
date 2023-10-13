@@ -96,7 +96,7 @@ const Income = () => {
           </button>
         </form>
       </div>
-      <div>
+      <div className="mx-auto w-1/2 text-center">
         <h1>Filters</h1>
         <label>
           Sort By price{" "}

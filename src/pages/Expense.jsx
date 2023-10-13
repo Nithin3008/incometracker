@@ -97,7 +97,7 @@ const Expense = () => {
           </button>
         </form>
       </div>
-      <div>
+      <div className="mx-auto w-1/2 text-center">
         <h1>Filters</h1>
         <label>
           Sort By price{" "}
@@ -121,7 +121,7 @@ const Expense = () => {
           <IncomeUi key={val._id} data={val}></IncomeUi>
         ))}
       </ul>
-      <h1>Total Amount: {totalAmount}</h1>
+      <h1 className="text-center">Total Amount: {totalAmount}</h1>
       <div className="text-center">
         <button
           className="bg-red-500 p-2 text-lg text-white"

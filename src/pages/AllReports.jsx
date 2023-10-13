@@ -17,6 +17,9 @@ const AllReports = () => {
     dispatcher(getSavings());
     dispatcher(getExpenses());
   }, [dispatcher]);
+  const cate = expenseList?.expenses?.map((val) => val?.category);
+
+  const cateOutput = new Set(cate);
 
   return (
     <div className="w-fit m-auto space-x-2 space-y-4 flex flex-col justify-center items-center mt-8">
@@ -36,9 +39,23 @@ const AllReports = () => {
           </div>
         </>
       ) : filterType == "expense" ? (
-        <div>
-          <TableItems data={expenseList.expenses}></TableItems>
-        </div>
+        <ul>
+          {Array.from(cateOutput).map((category) => (
+            <li key={category}>
+              <strong className="text-xl">{category}:</strong>
+              <ul>
+                {expenseList.expenses
+                  .filter((expense) => expense.category === category)
+                  .map((expense) => (
+                    <li key={expense.id}>
+                      <p>{expense.description}</p>
+                      <p>{expense.amount}</p>
+                    </li>
+                  ))}
+              </ul>
+            </li>
+          ))}
+        </ul>
       ) : (
         <h1>Select an Option Above</h1>
       )}
