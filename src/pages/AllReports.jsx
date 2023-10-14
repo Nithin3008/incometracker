@@ -21,7 +21,7 @@ const AllReports = () => {
 
   const cateOutput = new Set(cate);
 
-  const totalAmount = savingsList.savingss.reduce(
+  const totalAmount = savingsList?.savingss?.reduce(
     (acc, val) => acc + val.amount,
     0
   );
@@ -48,11 +48,11 @@ const AllReports = () => {
         </>
       ) : filterType == "expense" ? (
         <ul>
-          {Array.from(cateOutput).map((category) => (
+          {Array.from(cateOutput)?.map((category) => (
             <li key={category}>
               <strong className="text-xl">{category}:</strong>
               <ul>
-                {expenseList.expenses
+                {expenseList?.expenses
                   .filter((expense) => expense.category === category)
                   .map((expense) => (
                     <li key={expense.id}>
